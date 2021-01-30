@@ -1,0 +1,24 @@
+.character-icon{
+  background: whitesmoke;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+.character-icon > img {
+  background: inherit;
+  max-height: 80%;
+  margin: auto;
+}
+
+.character-icon > p {
+  background: inherit;
+  color: #1D1F29;
+  max-height:20%
+}
+
+.selected {
+  background: lightskyblue;
+}
