@@ -1,0 +1,5 @@
+.calendar-container{
+   display:flex;
+   flex-direction: column;
+   background: #222431;
+}

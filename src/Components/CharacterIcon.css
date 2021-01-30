@@ -14,6 +14,7 @@
 }
 
 .character-icon > p {
+  margin: 0px;
   background: inherit;
   color: #1D1F29;
   max-height:20%

@@ -1,0 +1,9 @@
+.weekday-stripe{
+  display: flex;
+  min-height: 120px;
+  min-width: 400px;
+  max-width: 620px;
+  background:whitesmoke;
+  margin: 5px;
+  border-radius: 5px;
+}

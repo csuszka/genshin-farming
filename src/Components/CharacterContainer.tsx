@@ -2,26 +2,29 @@ import React from 'react';
 import './CharacterContainer.css'
 import CharacterIcon from './CharacterIcon';
 
+type Props = { 
+  selectedCharacters: string[];
+  setSelectedCharacters: (selecterCharacters: string[]) => void;
+}
 
-
-let CharacterContainer = () => {
+let CharacterContainer = (props: Props) => {
   return (
-  <div id='CharacterContainer' className='character-container'>
-    <CharacterIcon character='Jean' />
-    <CharacterIcon character='Amber' />
-    <CharacterIcon character='Kaeya' />
-    <CharacterIcon character='Barbara' />
-    <CharacterIcon character='Diluc' />
-    <CharacterIcon character='Razor' />
-    <CharacterIcon character='Venti' />
-    <CharacterIcon character='Klee' />
-    <CharacterIcon character='Bennett' />
-    <CharacterIcon character='Noelle' />
-    <CharacterIcon character='Fischl' />
-    <CharacterIcon character='Sucrose' />
-    <CharacterIcon character='Mona' />
-    <CharacterIcon character='Diona' />
-    <CharacterIcon character='Albedo' />
+  <div id='characterContainer' className='character-container'>
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Jean' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Amber' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Kaeya' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Barbara' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Diluc' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Razor' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Venti' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Klee' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Bennett' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Noelle' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Fischl' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Sucrose' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Mona' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Diona' />
+    <CharacterIcon selectedCharacters={props.selectedCharacters} setSelectedCharacters={props.setSelectedCharacters}character='Albedo' />
   </div>
 
   )

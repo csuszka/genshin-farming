@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import './CharacterIcon.css'
 
 
-type Props = { character: string };
+type Props = { 
+  character: string; 
+  selectedCharacters: string[];
+  setSelectedCharacters: (selecterCharacters: string[]) => void;
+}
 
 let characters: Record<string, { img: string; name: string; } | undefined> = {
   Jean: {
@@ -76,6 +80,12 @@ let CharacterIcon = (props: Props) => {
 
   let handleClick = () => {
     setSelected(prev => !prev);
+    if(selected){
+      let spliceIndex = props.selectedCharacters.indexOf(props.character);
+      props.selectedCharacters.splice(spliceIndex,1);
+    } else {
+      props.selectedCharacters.push(props.character);
+    }
   }
  
   let characterName = props.character;
@@ -84,16 +94,14 @@ let CharacterIcon = (props: Props) => {
   if (characterObject) {
     image = characterObject.img;
   } else {
-    throw new Error('Character not found')
+    throw new Error('Character not found');
   }
   return (
     <div id='characterIcon' className={selected ? 'character-icon selected' : 'character-icon'} onClick={handleClick}>
       <img src={image} alt={characterName} />
       <p>{characterName}</p>
     </div>
-
   )
-
 }
 
 export default CharacterIcon;
