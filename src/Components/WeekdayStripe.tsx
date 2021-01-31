@@ -8,14 +8,22 @@ import CharacterIcon from './CharacterIcon';
 type Props = {
   day: string;
   selectedCharacters: string[];
-  setSelectedCharacters: (selectedCharacters: string[]) => void;
 }
 
 let WeekdayStripe = (props: Props) => {
   let characterArray = props.selectedCharacters;
+  let domainName = 'Forsaken Rift'
   return (
     <div id='weekdayStripe' className='weekday-stripe'>
-      {props.day} {characterArray}
+      <div>
+        {props.day}
+      </div>
+      <div>
+        {characterArray}
+      </div>
+      <div>
+        <DomainIcon domainName={domainName} selectedCharacters={props.selectedCharacters} />
+      </div>
     </div>
 
   )

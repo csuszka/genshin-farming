@@ -1,18 +1,26 @@
+import { url } from 'inspector';
 import React from 'react';
 import './DomainIcon.css';
 
 
 
-type Props = { 
+type Props = {
+  domainName: string;
   selectedCharacters: string[];
-  setSelectedCharacters: (selectedCharacters: string[]) => void;
+}
+
+let domainPictureUrl: string = 'https://static.wikia.nocookie.net/gensin-impact/images/a/a1/Domain_Forsaken_Rift.png';
+
+let domainStyle = {
+  backgroundSize: 'cover',
+  backgroundImage: 'url(' + domainPictureUrl + ')'
 }
 
 let DomainIcon = (props: Props) => {
   return (
-  <div id='domainIcon' className='domain-icon'>
-
-  </div>
+    <div id='domainIcon' className='domain-icon' style={domainStyle}>
+      {props.domainName}
+    </div>
 
   )
 }

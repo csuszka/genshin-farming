@@ -76,19 +76,27 @@ let characters: Record<string, { img: string; name: string; } | undefined> = {
 }
 
 let CharacterIcon = (props: Props) => {
-  const [selected, setSelected] = useState(false);
+  let characterName = props.character;
+  let selected: boolean;
+
+  if(props.selectedCharacters.indexOf(props.character) !== -1){
+    selected = true;
+  } else {
+    selected = false;
+  }
 
   let handleClick = () => {
-    setSelected(prev => !prev);
-    if(selected){
-      let spliceIndex = props.selectedCharacters.indexOf(props.character);
-      props.selectedCharacters.splice(spliceIndex,1);
+    let selectedCharacters = [...props.selectedCharacters]
+    let spliceIndex = selectedCharacters.indexOf(props.character);
+    if(spliceIndex === -1){
+      selectedCharacters.push(characterName)
+      props.setSelectedCharacters(selectedCharacters);
     } else {
-      props.selectedCharacters.push(props.character);
+      selectedCharacters.splice(spliceIndex,1)
+      props.setSelectedCharacters(selectedCharacters);
     }
   }
  
-  let characterName = props.character;
   let characterObject = characters[characterName];
   let image: string;
   if (characterObject) {
@@ -96,6 +104,7 @@ let CharacterIcon = (props: Props) => {
   } else {
     throw new Error('Character not found');
   }
+
   return (
     <div id='characterIcon' className={selected ? 'character-icon selected' : 'character-icon'} onClick={handleClick}>
       <img src={image} alt={characterName} />

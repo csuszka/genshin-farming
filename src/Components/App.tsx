@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Select your team</h1>
       </header>
       <CharacterContainer selectedCharacters={selectedCharacters} setSelectedCharacters={setSelectedCharacters} />
       <CalendarContainer selectedCharacters={selectedCharacters} setSelectedCharacters={setSelectedCharacters} />

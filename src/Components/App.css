@@ -3,3 +3,9 @@
   padding: 0px;
   margin: auto;
 }
+
+.App-header{
+  text-align: center;
+  color:whitesmoke;
+  max-width: 620px;
+}
